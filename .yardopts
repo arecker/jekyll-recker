@@ -1,0 +1,6 @@
+--no-private
+--asset screenshots:screenshots
+--output-dir docs
+-
+README.md
+lib/**/*.rb
