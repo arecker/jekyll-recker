@@ -1,6 +1,5 @@
 <nav>
-  <a href="{{ site.baseurl }}/" class="{% if page.active == 'index' %}active{% endif %}">index</a>
-  <a href="{% link archive.md %}" class="{% if page.active == 'archive' %}active{% endif %}">archive</a>
-  <a href="{% link projects.md %}" class="{% if page.active == 'projects' %}active{% endif %}">projects</a>
+  <a href="{{ site.baseurl }}/" class="{% if page.active == 'index' %}active{% endif %}">index.html</a>
+  <a href="{{ site.basurl }}/feed.xml">feed.xml</a>
   <span class="float-right hide-on-mobile">{{ page.slug }}</span>
 </nav>
