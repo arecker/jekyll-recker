@@ -8,6 +8,14 @@ module Jekyll
     class Twitter
       include Mixins::Logging
 
+      def self.share(dry: false)
+        client = new(dry: dry)
+        logger.info 'discovering credentials'
+        client.discover_credentials!
+        logger.info "tweeting #{client.latest.data['title']}"
+        client.post_latest!
+      end
+
       def initialize(dry: false)
         @dry = dry
       end

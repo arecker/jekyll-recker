@@ -9,6 +9,15 @@ module Jekyll
     class Slack
       include Jekyll::Recker::Mixins::Logging
 
+      def self.share(dry: false)
+        each_in_config(dry: dry) do |client|
+          logger.info "#{client.key}: discovering webhook"
+          client.discover_webhook!
+          logger.info "#{client.key}: posting #{client.latest.data['title']}"
+          client.post_latest!
+        end
+      end
+
       def self.each_in_config(dry: false)
         Configuration.slack.map do |key, body|
           yield new(key, body, dry: dry)
