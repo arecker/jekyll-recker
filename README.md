@@ -95,10 +95,10 @@ Configure the tweet share in `_config.yml`.
 
 Alternatively, ensure these environment variables are set.
 
-    export ACCESS_TOKEN_SECRET="..."
-    export ACCESS_TOKEN="..."
-    export CONSUMER_API_KEY="..."
-    export CONSUMER_API_SECRET="..."
+    export TWITTER_ACCESS_TOKEN_SECRET="..."
+    export TWITTER_ACCESS_TOKEN="..."
+    export TWITTER_CONSUMER_API_KEY="..."
+    export TWITTER_CONSUMER_API_SECRET="..."
 
 [example slack]: screenshots/example-slack.png
 [example tweet]: screenshots/example-tweet.png

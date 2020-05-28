@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'twitter'
+require 'koala'
 
 module Jekyll
   module Recker
-    # Twitter Client
-    class Twitter
+    # Facebook Client
+    class Facebook
       include Mixins::Logging
 
       def self.share(dry: false)
         client = new(dry: dry)
         logger.info 'discovering credentials'
         client.discover_credentials!
-        logger.info "tweeting #{client.latest.data['title']}"
+        logger.info "sharing #{client.latest.data['title']}"
         client.post_latest!
       end
 
@@ -22,17 +22,17 @@ module Jekyll
 
       def discover_credentials!
         @creds = extract_from_env || extract_from_config
-        raise ReckerError, 'cannot find twitter credentials!' if @creds.nil?
+        raise ReckerError, 'cannot find facebook credentials!' if @creds.nil?
 
         set_credentials!
       end
 
       def post_latest!
         if @dry
-          logger.info('tweeting in dry mode, printing message')
-          logger.info("BEGIN TWEET\n#{tweet_body.strip}\nEND TWEET")
+          logger.info('posting in dry mode, printing message')
+          logger.info("BEGIN POST\n#{post_body.strip}\nEND POST")
         else
-          @client.update(tweet_body)
+          @graph.put_connections("me", "feed", message: "I am writing on my wall!")
         end
       end
 
@@ -42,26 +42,27 @@ module Jekyll
 
       private
 
-      def tweet_body
+      def post_body
         url = File.join Configuration.jekyll['url'], latest.url
-        <<~TWEET
+        <<~POST
           #{latest.data['date'].strftime('%A, %B %-d %Y')}
           #{latest.data['title']}
           #{url}
-        TWEET
+        POST
       end
 
       def set_credentials!
-        @client ||= ::Twitter::REST::Client.new do |settings|
-          settings.consumer_key = @creds['consumer_api_key']
-          settings.consumer_secret = @creds['consumer_api_secret']
-          settings.access_token = @creds['access_token']
-          settings.access_token_secret = @creds['access_token_secret']
+        Koala.configure do |config|
+          config.access_token = @creds['access_token']
+          # config.app_access_token = @creds['app_access_token']
+          config.app_id = @creds['app_id']
+          config.app_secret = @creds['app_secret']
         end
+        @client = Koala::Facebook::API.new(@creds['access_token'])
       end
 
       def extract_from_env
-        values = cred_fieldnames.map { |k| ENV["TWITTER_#{k.upcase}"] }
+        values = cred_fieldnames.map { |k| ENV["FACEBOOK_#{k.upcase}"] }
 
         return nil if values.any? { |v| v.nil? || v.empty? }
 
@@ -70,7 +71,12 @@ module Jekyll
 
       def extract_from_config
         values = cred_fieldnames.map do |k|
-          Recker.shell(Configuration.twitter["#{k}_cmd"]).strip
+          cmd = Configuration.facebook.fetch("#{k}_cmd", '').strip
+          if cmd.empty?
+            nil
+          else
+            Recker.shell(Configuration.facebook["#{k}_cmd"]).strip
+          end
         end
 
         return nil if values.any? { |v| v.nil? || v.empty? }
@@ -79,11 +85,11 @@ module Jekyll
       end
 
       def cred_fieldnames
+        # app_access_token
         %w[
-          access_token_secret
           access_token
-          consumer_api_key
-          consumer_api_secret
+          app_id
+          app_secret
         ]
       end
     end

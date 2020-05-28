@@ -11,6 +11,7 @@ module Jekyll
     require 'jekyll_recker/commands.rb'
     require 'jekyll_recker/configuration.rb'
     require 'jekyll_recker/error.rb'
+    require 'jekyll_recker/facebook.rb'
     require 'jekyll_recker/filters.rb'
     require 'jekyll_recker/generators.rb'
     require 'jekyll_recker/shell.rb'

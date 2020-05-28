@@ -12,6 +12,10 @@ module Jekyll
         jekyll.fetch('recker', {})
       end
 
+      def self.facebook
+        recker.fetch('facebook', {})
+      end
+
       def self.twitter
         recker.fetch('twitter', {})
       end

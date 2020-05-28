@@ -18,14 +18,16 @@ module Jekyll
         end
 
         def self.action(args, options)
-          logger.info "sharing with args=#{args} options=#{options}"
           if args.empty? || args.include?('slack')
             Recker::Slack.share(dry: options['dry'])
           elsif args.empty? || args.include?('twitter')
             Recker::Twitter.share(dry: options['dry'])
+          # elsif args.empty? || args.include?('facebook')
+          #   Recker::Facebook.share(dry: options['dry'])
           end
         rescue ReckerError => e
-          logger.abort_with e.message
+          logger.error e.message
+          exit 1
         end
       end
     end

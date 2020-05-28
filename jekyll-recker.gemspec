@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'yard'
 
   spec.add_runtime_dependency 'jekyll', '~> 3.8'
+  spec.add_runtime_dependency 'koala'
   spec.add_runtime_dependency 'slack-notifier'
   spec.add_runtime_dependency 'twitter'
 end
