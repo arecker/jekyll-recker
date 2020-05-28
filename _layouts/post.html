@@ -1,28 +1,20 @@
----
-layout: default
----
-{% capture datestring %}{{ page.date | date: '%A, %B %d %Y' }}{% endcapture %}
-{% include header.html title=datestring subtitle=page.title %}
-<hr/>
-{% include nav.html %}
-<hr/>
-{%- if page.image -%}
-<br/>
-<figure>
-  <img alt="page.image" src="{{ site.baseurl }}assets/images/{{ page.image }}"/>
-</figure>
-<br/>
-{%- endif -%}
-{{ content }}
-<nav class="clearfix">
-  {%- if page.next -%}
-  <a href="{{ page.next.url }}">
-    ⟵ {{ page.next.slug }}
-  </a>
-  {%- endif -%}
-  {%- if page.previous -%}
-  <a class="float-right" href="{{ page.previous.url }}">
-      {{ page.previous.slug }} ⟶
-  </a>
-</nav>
-{%- endif -%}
+{%- capture datestring %}{{ page.date | uyd_date }}{% endcapture %}
+<!doctype html>
+<html lang="en">
+  {% include head.html title=datestring description=page.title %}
+  <body>
+    {% include header.html title=datestring subtitle=page.title %}
+    <hr/>
+    {% include nav.html %}
+    <hr/>
+    {%- if page.image -%}
+    <br/>
+    {% include figure.html filename=page.image %}
+    <br/>
+    {%- endif -%}
+    {{ content }}
+    {% include pager.html %}
+    <hr/>
+    {% include footer.html %}
+  </body>
+</html>
