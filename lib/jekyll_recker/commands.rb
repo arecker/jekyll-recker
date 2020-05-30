@@ -18,13 +18,9 @@ module Jekyll
         end
 
         def self.action(args, options)
-          if args.empty? || args.include?('slack')
-            Recker::Slack.share(dry: options['dry'])
-          elsif args.empty? || args.include?('twitter')
-            Recker::Twitter.share(dry: options['dry'])
-          # elsif args.empty? || args.include?('facebook')
-          #   Recker::Facebook.share(dry: options['dry'])
-          end
+          args += %w[slack twitter] if args.empty?
+          Recker::Slack.share(dry: options['dry']) if args.include?('slack')
+          Recker::Twitter.share(dry: options['dry']) if args.include?('twitter')
         rescue ReckerError => e
           logger.error e.message
           exit 1
