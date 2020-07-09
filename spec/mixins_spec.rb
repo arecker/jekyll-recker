@@ -23,13 +23,13 @@ end
 describe Jekyll::Recker::Mixins::Logging do
   describe '.logger' do
     it 'should return logger' do
-      expect(Dog.logger).to equal(Jekyll::Recker.logger)
+      expect(Dog.logger).to be_a(Logger)
     end
   end
 
   describe '#logger' do
     it 'should return logger' do
-      expect(Dog.new.logger).to equal(Jekyll::Recker.logger)
+      expect(Dog.new.logger).to be_a(Logger)
     end
   end
 end

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'logger'
+
 module Jekyll
   module Recker
     module Mixins
@@ -21,7 +23,10 @@ module Jekyll
         end
 
         def logger
-          Jekyll::Recker.logger
+          @logger ||= Logger.new(
+            STDOUT,
+            formatter: proc { |_severity, _datetime, _progname, msg| "jekyll-recker: #{msg}\n" }
+          )
         end
       end
     end

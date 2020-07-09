@@ -5,7 +5,6 @@ require 'jekyll'
 module Jekyll
   # Recker
   module Recker
-    require 'jekyll_recker/logger.rb'
     require 'jekyll_recker/mixins.rb'
 
     require 'jekyll_recker/commands.rb'
