@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  File: tags
+  File: filters
   
     &mdash; Documentation by YARD 0.9.24
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "tags";
+  pathId = "filters";
   relpath = '';
 </script>
 
@@ -37,7 +37,7 @@
         <div id="menu">
   
     <a href="_index.html">Index</a> &raquo; 
-    <span class="title">File: tags</span>
+    <span class="title">File: filters</span>
   
 </div>
 
@@ -61,18 +61,17 @@
 </span>
 <span class='kw'>module</span> <span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span>
   <span class='kw'>module</span> <span class='const'>Recker</span>
-    <span class='kw'>module</span> <span class='const'>Tags</span>
-      <span class='comment'># Returns the VERSION of the running jekyll-recker gem.
-</span>      <span class='kw'>class</span> <span class='const'>Version</span> <span class='op'>&lt;</span> <span class='const'>Liquid</span><span class='op'>::</span><span class='const'>Tag</span>
-        <span class='kw'>def</span> <span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='id identifier rubyid__context'>_context</span><span class='rparen'>)</span>
-          <span class='const'>VERSION</span>
-        <span class='kw'>end</span>
+    <span class='comment'># Filters
+</span>    <span class='kw'>module</span> <span class='const'>Filters</span>
+      <span class='comment'># Converts a date object to standard Uhh Yeah Dude format.
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_uyd_date'>uyd_date</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%A, %B %d %Y</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 
-<span class='const'>Liquid</span><span class='op'>::</span><span class='const'>Template</span><span class='period'>.</span><span class='id identifier rubyid_register_tag'>register_tag</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>recker_version</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker.html" title="Jekyll::Recker (module)">Recker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker/Tags.html" title="Jekyll::Recker::Tags (module)">Tags</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker/Tags/Version.html" title="Jekyll::Recker::Tags::Version (class)">Version</a></span></span><span class='rparen'>)</span></pre></div></div>
+<span class='const'>Liquid</span><span class='op'>::</span><span class='const'>Template</span><span class='period'>.</span><span class='id identifier rubyid_register_filter'>register_filter</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker.html" title="Jekyll::Recker (module)">Recker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker/Filters.html" title="Jekyll::Recker::Filters (module)">Filters</a></span></span><span class='rparen'>)</span></pre></div></div>
 
       <div id="footer">
   Generated on Thu Jul  9 10:43:30 2020 by

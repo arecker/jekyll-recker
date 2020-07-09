@@ -135,6 +135,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#action-class_method" title="action (class method)">.<strong>action</strong>(args, options)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#init_with_program-class_method" title="init_with_program (class method)">.<strong>init_with_program</strong>(prog)  &#x21d2; Object </a>
     
 
@@ -176,7 +198,47 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="init_with_program-class_method">
+  <h3 class="signature first" id="action-class_method">
+  
+    .<strong>action</strong>(args, options)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/commands.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_action'>action</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_args'>args</span> <span class='op'>+=</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>slack</span><span class='words_sep'> </span><span class='tstring_content'>twitter</span><span class='tstring_end'>]</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='const'><span class='object_link'><a href="../../Recker.html" title="Jekyll::Recker (module)">Recker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Slack.html" title="Jekyll::Recker::Slack (class)">Slack</a></span></span><span class='period'>.</span><span class='id identifier rubyid_share'><span class='object_link'><a href="../Slack.html#share-class_method" title="Jekyll::Recker::Slack.share (method)">share</a></span></span><span class='lparen'>(</span><span class='label'>dry:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dry</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>slack</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../Recker.html" title="Jekyll::Recker (module)">Recker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Twitter.html" title="Jekyll::Recker::Twitter (class)">Twitter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_share'><span class='object_link'><a href="../Twitter.html#share-class_method" title="Jekyll::Recker::Twitter.share (method)">share</a></span></span><span class='lparen'>(</span><span class='label'>dry:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dry</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>twitter</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="../ReckerError.html" title="Jekyll::Recker::ReckerError (class)">ReckerError</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="init_with_program-class_method">
   
     .<strong>init_with_program</strong>(prog)  &#x21d2; <tt>Object</tt> 
   
@@ -197,11 +259,7 @@
 15
 16
 17
-18
-19
-20
-21
-22</pre>
+18</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/jekyll_recker/commands.rb', line 11</span>
@@ -211,11 +269,7 @@
     <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_syntax'>syntax</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>share</span><span class='tstring_end'>&#39;</span></span>
     <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Share latest post with each configured backend</span><span class='tstring_end'>&#39;</span></span>
     <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_option'>option</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dry</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-d</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>--dry</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>perform dry run</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_action'>action</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid__args'>_args</span><span class='comma'>,</span> <span class='id identifier rubyid__options'>_options</span><span class='op'>|</span>
-      <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>normally I\&#39;d share here</span><span class='tstring_end'>&#39;</span></span>
-    <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="../ReckerError.html" title="Jekyll::Recker::ReckerError (class)">ReckerError</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
-      <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_abort_with'>abort_with</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
-    <span class='kw'>end</span>
+    <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_action'>action</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='op'>|</span> <span class='id identifier rubyid_action'>action</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -228,7 +282,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Apr  7 13:28:21 2020 by
+  Generated on Thu Jul  9 10:43:30 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>

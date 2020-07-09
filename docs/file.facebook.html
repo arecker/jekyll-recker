@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  File: twitter
+  File: facebook
   
     &mdash; Documentation by YARD 0.9.24
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "twitter";
+  pathId = "facebook";
   relpath = '';
 </script>
 
@@ -37,7 +37,7 @@
         <div id="menu">
   
     <a href="_index.html">Index</a> &raquo; 
-    <span class="title">File: twitter</span>
+    <span class="title">File: facebook</span>
   
 </div>
 
@@ -59,19 +59,19 @@
 
       <div id="content"><div id='filecontents'><pre class="code ruby"><span class='comment'># frozen_string_literal: true
 </span>
-<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>twitter</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>koala</span><span class='tstring_end'>&#39;</span></span>
 
 <span class='kw'>module</span> <span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span>
   <span class='kw'>module</span> <span class='const'>Recker</span>
-    <span class='comment'># Twitter Client
-</span>    <span class='kw'>class</span> <span class='const'>Twitter</span>
+    <span class='comment'># Facebook Client
+</span>    <span class='kw'>class</span> <span class='const'>Facebook</span>
       <span class='id identifier rubyid_include'>include</span> <span class='const'>Mixins</span><span class='op'>::</span><span class='const'>Logging</span>
 
       <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_share'>share</span><span class='lparen'>(</span><span class='label'>dry:</span> <span class='kw'>false</span><span class='rparen'>)</span>
         <span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>dry:</span> <span class='id identifier rubyid_dry'>dry</span><span class='rparen'>)</span>
         <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>discovering credentials</span><span class='tstring_end'>&#39;</span></span>
         <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_discover_credentials!'>discover_credentials!</span>
-        <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tweeting </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_latest'>latest</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>title</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sharing </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_latest'>latest</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>title</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
         <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_post_latest!'>post_latest!</span>
       <span class='kw'>end</span>
 
@@ -81,17 +81,17 @@
 
       <span class='kw'>def</span> <span class='id identifier rubyid_discover_credentials!'>discover_credentials!</span>
         <span class='ivar'>@creds</span> <span class='op'>=</span> <span class='id identifier rubyid_extract_from_env'>extract_from_env</span> <span class='op'>||</span> <span class='id identifier rubyid_extract_from_config'>extract_from_config</span>
-        <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ReckerError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cannot find twitter credentials!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@creds</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ReckerError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cannot find facebook credentials!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@creds</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 
         <span class='id identifier rubyid_set_credentials!'>set_credentials!</span>
       <span class='kw'>end</span>
 
       <span class='kw'>def</span> <span class='id identifier rubyid_post_latest!'>post_latest!</span>
         <span class='kw'>if</span> <span class='ivar'>@dry</span>
-          <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tweeting in dry mode, printing message</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-          <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BEGIN TWEET\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tweet_body'>tweet_body</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='embexpr_end'>}</span><span class='tstring_content'>\nEND TWEET</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posting in dry mode, printing message</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BEGIN POST\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_post_body'>post_body</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='embexpr_end'>}</span><span class='tstring_content'>\nEND POST</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
         <span class='kw'>else</span>
-          <span class='ivar'>@client</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_tweet_body'>tweet_body</span><span class='rparen'>)</span>
+          <span class='ivar'>@graph</span><span class='period'>.</span><span class='id identifier rubyid_put_connections'>put_connections</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>me</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>feed</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>message:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>I am writing on my wall!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
         <span class='kw'>end</span>
       <span class='kw'>end</span>
 
@@ -101,26 +101,27 @@
 
       <span class='id identifier rubyid_private'>private</span>
 
-      <span class='kw'>def</span> <span class='id identifier rubyid_tweet_body'>tweet_body</span>
+      <span class='kw'>def</span> <span class='id identifier rubyid_post_body'>post_body</span>
         <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='const'>Configuration</span><span class='period'>.</span><span class='id identifier rubyid_jekyll'>jekyll</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>url</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_latest'>latest</span><span class='period'>.</span><span class='id identifier rubyid_url'>url</span>
-        <span class='heredoc_beg'>&lt;&lt;~TWEET</span>
+        <span class='heredoc_beg'>&lt;&lt;~POST</span>
 <span class='tstring_content'>          </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_latest'>latest</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%A, %B %-d %Y</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>
 </span><span class='tstring_content'>          </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_latest'>latest</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>title</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>
 </span><span class='tstring_content'>          </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='embexpr_end'>}</span><span class='tstring_content'>
-</span><span class='heredoc_end'>        TWEET
+</span><span class='heredoc_end'>        POST
 </span>      <span class='kw'>end</span>
 
       <span class='kw'>def</span> <span class='id identifier rubyid_set_credentials!'>set_credentials!</span>
-        <span class='ivar'>@client</span> <span class='op'>||=</span> <span class='op'>::</span><span class='const'>Twitter</span><span class='op'>::</span><span class='const'>REST</span><span class='op'>::</span><span class='const'>Client</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_settings'>settings</span><span class='op'>|</span>
-          <span class='id identifier rubyid_settings'>settings</span><span class='period'>.</span><span class='id identifier rubyid_consumer_key'>consumer_key</span> <span class='op'>=</span> <span class='ivar'>@creds</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>consumer_api_key</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-          <span class='id identifier rubyid_settings'>settings</span><span class='period'>.</span><span class='id identifier rubyid_consumer_secret'>consumer_secret</span> <span class='op'>=</span> <span class='ivar'>@creds</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>consumer_api_secret</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-          <span class='id identifier rubyid_settings'>settings</span><span class='period'>.</span><span class='id identifier rubyid_access_token'>access_token</span> <span class='op'>=</span> <span class='ivar'>@creds</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>access_token</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-          <span class='id identifier rubyid_settings'>settings</span><span class='period'>.</span><span class='id identifier rubyid_access_token_secret'>access_token_secret</span> <span class='op'>=</span> <span class='ivar'>@creds</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>access_token_secret</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+        <span class='const'>Koala</span><span class='period'>.</span><span class='id identifier rubyid_configure'>configure</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
+          <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_access_token'>access_token</span> <span class='op'>=</span> <span class='ivar'>@creds</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>access_token</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+          <span class='comment'># config.app_access_token = @creds[&#39;app_access_token&#39;]
+</span>          <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_app_id'>app_id</span> <span class='op'>=</span> <span class='ivar'>@creds</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>app_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+          <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_app_secret'>app_secret</span> <span class='op'>=</span> <span class='ivar'>@creds</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>app_secret</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
         <span class='kw'>end</span>
+        <span class='ivar'>@client</span> <span class='op'>=</span> <span class='const'>Koala</span><span class='op'>::</span><span class='const'>Facebook</span><span class='op'>::</span><span class='const'>API</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@creds</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>access_token</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
       <span class='kw'>end</span>
 
       <span class='kw'>def</span> <span class='id identifier rubyid_extract_from_env'>extract_from_env</span>
-        <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='id identifier rubyid_cred_fieldnames'>cred_fieldnames</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='op'>|</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TWITTER_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+        <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='id identifier rubyid_cred_fieldnames'>cred_fieldnames</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='op'>|</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>FACEBOOK_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
 
         <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>if</span> <span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='rbrace'>}</span>
 
@@ -129,7 +130,12 @@
 
       <span class='kw'>def</span> <span class='id identifier rubyid_extract_from_config'>extract_from_config</span>
         <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='id identifier rubyid_cred_fieldnames'>cred_fieldnames</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='op'>|</span>
-          <span class='const'>Recker</span><span class='period'>.</span><span class='id identifier rubyid_shell'>shell</span><span class='lparen'>(</span><span class='const'>Configuration</span><span class='period'>.</span><span class='id identifier rubyid_twitter'>twitter</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_content'>_cmd</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+          <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>Configuration</span><span class='period'>.</span><span class='id identifier rubyid_facebook'>facebook</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_content'>_cmd</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+          <span class='kw'>if</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+            <span class='kw'>nil</span>
+          <span class='kw'>else</span>
+            <span class='const'>Recker</span><span class='period'>.</span><span class='id identifier rubyid_shell'>shell</span><span class='lparen'>(</span><span class='const'>Configuration</span><span class='period'>.</span><span class='id identifier rubyid_facebook'>facebook</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_content'>_cmd</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+          <span class='kw'>end</span>
         <span class='kw'>end</span>
 
         <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>if</span> <span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='rbrace'>}</span>
@@ -138,11 +144,11 @@
       <span class='kw'>end</span>
 
       <span class='kw'>def</span> <span class='id identifier rubyid_cred_fieldnames'>cred_fieldnames</span>
-        <span class='qwords_beg'>%w[</span><span class='words_sep'>
-          </span><span class='tstring_content'>access_token_secret</span><span class='words_sep'>
+        <span class='comment'># app_access_token
+</span>        <span class='qwords_beg'>%w[</span><span class='words_sep'>
           </span><span class='tstring_content'>access_token</span><span class='words_sep'>
-          </span><span class='tstring_content'>consumer_api_key</span><span class='words_sep'>
-          </span><span class='tstring_content'>consumer_api_secret</span><span class='words_sep'>
+          </span><span class='tstring_content'>app_id</span><span class='words_sep'>
+          </span><span class='tstring_content'>app_secret</span><span class='words_sep'>
         </span><span class='tstring_end'>]</span></span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
