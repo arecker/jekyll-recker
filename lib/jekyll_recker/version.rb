@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-module Jekyll
-  module Recker
-    VERSION = '1.7.0'
-  end
+module JekyllRecker
+  VERSION = '1.7.0'
 end

@@ -3,16 +3,16 @@
 require_relative 'spec_helper.rb'
 
 class Dog
-  include Jekyll::Recker::Mixins::Descendants
-  include Jekyll::Recker::Mixins::Logging
-  include Jekyll::Recker::Mixins::Introspection
+  include JekyllRecker::Mixins::Descendants
+  include JekyllRecker::Mixins::Logging
+  include JekyllRecker::Mixins::Introspection
 end
 
 class PembrokeWelshCorgi < Dog; end
 class CardiganWelshCorgi < Dog; end
 class GoldenRetriever < Dog; end
 
-describe Jekyll::Recker::Mixins::Descendants do
+describe JekyllRecker::Mixins::Descendants do
   describe '.descendants' do
     it 'should iterate over each child class' do
       expected = [PembrokeWelshCorgi, CardiganWelshCorgi, GoldenRetriever]
@@ -21,7 +21,7 @@ describe Jekyll::Recker::Mixins::Descendants do
   end
 end
 
-describe Jekyll::Recker::Mixins::Introspection do
+describe JekyllRecker::Mixins::Introspection do
   describe '.class_name' do
     it 'should return the class name' do
       expect(Dog.new.class_name).to eq('Dog')
@@ -29,7 +29,7 @@ describe Jekyll::Recker::Mixins::Introspection do
   end
 end
 
-describe Jekyll::Recker::Mixins::Logging do
+describe JekyllRecker::Mixins::Logging do
   describe '.logger' do
     it 'should return logger' do
       expect(Dog.logger).to be_a(Logger)

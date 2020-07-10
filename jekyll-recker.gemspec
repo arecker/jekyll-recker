@@ -7,7 +7,7 @@ require 'jekyll_recker/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'jekyll-recker'
-  spec.version       = Jekyll::Recker::VERSION
+  spec.version       = JekyllRecker::VERSION
   spec.authors       = ['Alex Recker']
   spec.email         = ['alex@reckerfamily.com']
   spec.summary       = 'The Greatest Jekyll Plugin in the World'

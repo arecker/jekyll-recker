@@ -94,7 +94,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/jekyll_recker/words.rb</dd>
+    <dd>lib/jekyll_recker/extensions.rb</dd>
   </dl>
   
 </div>
@@ -237,15 +237,15 @@
       <pre class="lines">
 
 
-75
-76
-77</pre>
+20
+21
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/words.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/extensions.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pretty_path'>pretty_path</span><span class='lparen'>(</span><span class='id identifier rubyid_home'>home</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker.html" title="Jekyll::Recker (module)">Recker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker/Words.html" title="Jekyll::Recker::Words (module)">Words</a></span></span><span class='period'>.</span><span class='id identifier rubyid_prettify_path'><span class='object_link'><a href="Jekyll/Recker/Words.html#prettify_path-class_method" title="Jekyll::Recker::Words.prettify_path (method)">prettify_path</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_home'>home</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="JekyllRecker.html" title="JekyllRecker (module)">JekyllRecker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="JekyllRecker/Utils.html" title="JekyllRecker::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_prettify_path'><span class='object_link'><a href="JekyllRecker/Utils.html#prettify_path-class_method" title="JekyllRecker::Utils.prettify_path (method)">prettify_path</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_home'>home</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -267,15 +267,15 @@
       <pre class="lines">
 
 
-79
-80
-81</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/words.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/extensions.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_and_array'>to_and_array</span>
-  <span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker.html" title="Jekyll::Recker (module)">Recker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker/Words.html" title="Jekyll::Recker::Words (module)">Words</a></span></span><span class='period'>.</span><span class='id identifier rubyid_and_list_to_array'><span class='object_link'><a href="Jekyll/Recker/Words.html#and_list_to_array-class_method" title="Jekyll::Recker::Words.and_list_to_array (method)">and_list_to_array</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="JekyllRecker.html" title="JekyllRecker (module)">JekyllRecker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="JekyllRecker/Utils.html" title="JekyllRecker::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_and_list_to_array'><span class='object_link'><a href="JekyllRecker/Utils.html#and_list_to_array-class_method" title="JekyllRecker::Utils.and_list_to_array (method)">and_list_to_array</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -297,15 +297,15 @@
       <pre class="lines">
 
 
-71
-72
-73</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/words.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/extensions.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_word_count'>word_count</span>
-  <span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker.html" title="Jekyll::Recker (module)">Recker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker/Words.html" title="Jekyll::Recker::Words (module)">Words</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_word_list'><span class='object_link'><a href="Jekyll/Recker/Words.html#to_word_list-class_method" title="Jekyll::Recker::Words.to_word_list (method)">to_word_list</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span>
+  <span class='const'><span class='object_link'><a href="JekyllRecker.html" title="JekyllRecker (module)">JekyllRecker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="JekyllRecker/Utils.html" title="JekyllRecker::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_word_list'><span class='object_link'><a href="JekyllRecker/Utils.html#to_word_list-class_method" title="JekyllRecker::Utils.to_word_list (method)">to_word_list</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -327,15 +327,15 @@
       <pre class="lines">
 
 
-67
-68
-69</pre>
+12
+13
+14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/words.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/extensions.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_words'>words</span>
-  <span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker.html" title="Jekyll::Recker (module)">Recker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Jekyll/Recker/Words.html" title="Jekyll::Recker::Words (module)">Words</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_word_list'><span class='object_link'><a href="Jekyll/Recker/Words.html#to_word_list-class_method" title="Jekyll::Recker::Words.to_word_list (method)">to_word_list</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="JekyllRecker.html" title="JekyllRecker (module)">JekyllRecker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="JekyllRecker/Utils.html" title="JekyllRecker::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_word_list'><span class='object_link'><a href="JekyllRecker/Utils.html#to_word_list-class_method" title="JekyllRecker::Utils.to_word_list (method)">to_word_list</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -347,7 +347,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Jul  9 23:04:00 2020 by
+  Generated on Thu Jul  9 23:50:02 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>

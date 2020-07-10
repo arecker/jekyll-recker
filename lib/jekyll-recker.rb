@@ -2,20 +2,22 @@
 
 require 'jekyll'
 
-module Jekyll
-  # Recker
-  module Recker
-    require 'jekyll_recker/mixins.rb'
+# jekyll-recker
+#
+# The greatest jekyll plugin in the world
+module JekyllRecker
+  autoload :Configuration, 'jekyll_recker/configuration.rb'
+  autoload :Error, 'jekyll_recker/error.rb'
+  autoload :Mixins, 'jekyll_recker/mixins.rb'
+  autoload :Shell, 'jekyll_recker/shell.rb'
+  autoload :Social, 'jekyll_recker/social.rb'
+  autoload :VERSION, 'jekyll_recker/version.rb'
+  autoload :Utils, 'jekyll_recker/utils.rb'
 
-    require 'jekyll_recker/commands.rb'
-    require 'jekyll_recker/configuration.rb'
-    require 'jekyll_recker/error.rb'
-    require 'jekyll_recker/filters.rb'
-    require 'jekyll_recker/generators.rb'
-    require 'jekyll_recker/shell.rb'
-    require 'jekyll_recker/social.rb'
-    require 'jekyll_recker/tags.rb'
-    require 'jekyll_recker/version.rb'
-    require 'jekyll_recker/words.rb'
-  end
+  # Eager loads!
+  require 'jekyll_recker/commands.rb'
+  require 'jekyll_recker/extensions.rb'
+  require 'jekyll_recker/filters.rb'
+  require 'jekyll_recker/generators.rb'
+  require 'jekyll_recker/tags.rb'
 end

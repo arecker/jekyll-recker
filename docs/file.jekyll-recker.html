@@ -61,26 +61,28 @@
 </span>
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll</span><span class='tstring_end'>&#39;</span></span>
 
-<span class='kw'>module</span> <span class='const'><span class='object_link'><a href="Jekyll.html" title="Jekyll (module)">Jekyll</a></span></span>
-  <span class='comment'># Recker
-</span>  <span class='kw'>module</span> <span class='const'>Recker</span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/mixins.rb</span><span class='tstring_end'>&#39;</span></span>
+<span class='comment'># jekyll-recker
+</span><span class='comment'>#
+</span><span class='comment'># The greatest jekyll plugin in the world
+</span><span class='kw'>module</span> <span class='const'><span class='object_link'><a href="JekyllRecker.html" title="JekyllRecker (module)">JekyllRecker</a></span></span>
+  <span class='id identifier rubyid_autoload'>autoload</span> <span class='symbol'>:Configuration</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/configuration.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_autoload'>autoload</span> <span class='symbol'>:Error</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/error.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_autoload'>autoload</span> <span class='symbol'>:Mixins</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/mixins.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_autoload'>autoload</span> <span class='symbol'>:Shell</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/shell.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_autoload'>autoload</span> <span class='symbol'>:Social</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/social.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_autoload'>autoload</span> <span class='symbol'>:VERSION</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/version.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_autoload'>autoload</span> <span class='symbol'>:Utils</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/utils.rb</span><span class='tstring_end'>&#39;</span></span>
 
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/commands.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/configuration.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/error.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/filters.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/generators.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/shell.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/social.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/tags.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/version.rb</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/words.rb</span><span class='tstring_end'>&#39;</span></span>
-  <span class='kw'>end</span>
+  <span class='comment'># Eager loads!
+</span>  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/commands.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/extensions.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/filters.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/generators.rb</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jekyll_recker/tags.rb</span><span class='tstring_end'>&#39;</span></span>
 <span class='kw'>end</span></pre></div></div>
 
       <div id="footer">
-  Generated on Thu Jul  9 23:03:59 2020 by
+  Generated on Thu Jul  9 23:50:02 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>

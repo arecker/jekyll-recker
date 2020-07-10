@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-module Jekyll
-  module Recker
-    # ReckerError
-    class ReckerError < StandardError; end
-  end
+module JekyllRecker
+  # Error
+  class Error < StandardError; end
 end

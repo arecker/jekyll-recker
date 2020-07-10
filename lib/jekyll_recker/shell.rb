@@ -2,13 +2,13 @@
 
 require 'open3'
 
-module Jekyll
-  # Recker
-  module Recker
+module JekyllRecker
+  # Shell
+  module Shell
     # ShellCommandFailed
-    class ShellCommandFailed < ReckerError; end
+    class ShellCommandFailed < JekyllRecker::Error; end
 
-    def self.shell(cmd)
+    def self.run(cmd)
       out, err, status = Open3.capture3(cmd)
       return out if status.success?
 
