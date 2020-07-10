@@ -54,7 +54,7 @@ module JekyllRecker
       KEY = 'posts'
 
       def crunch
-        entries.count.pretty
+        entries.count
       end
     end
 
@@ -67,8 +67,8 @@ module JekyllRecker
       def crunch
         total_counts = entries.collect(&:content).map { |c| number_of_words(c) }
         {
-          'average' => average(total_counts).pretty,
-          'total' => total(total_counts).pretty
+          'average' => average(total_counts),
+          'total' => total(total_counts)
         }
       end
     end
@@ -82,7 +82,7 @@ module JekyllRecker
       def crunch
         streaks.take(1).map do |count, dates|
           {
-            'days' => count.pretty,
+            'days' => count,
             'start' => dates[0],
             'end' => dates[1]
           }
