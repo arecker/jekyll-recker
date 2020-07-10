@@ -15,6 +15,7 @@ module Jekyll
     require 'jekyll_recker/generators.rb'
     require 'jekyll_recker/shell.rb'
     require 'jekyll_recker/slack.rb'
+    require 'jekyll_recker/social.rb'
     require 'jekyll_recker/tags.rb'
     require 'jekyll_recker/twitter.rb'
     require 'jekyll_recker/version.rb'
