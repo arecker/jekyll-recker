@@ -5,6 +5,7 @@ require_relative 'spec_helper.rb'
 class Dog
   include Jekyll::Recker::Mixins::Descendants
   include Jekyll::Recker::Mixins::Logging
+  include Jekyll::Recker::Mixins::Introspection
 end
 
 class PembrokeWelshCorgi < Dog; end
@@ -16,6 +17,14 @@ describe Jekyll::Recker::Mixins::Descendants do
     it 'should iterate over each child class' do
       expected = [PembrokeWelshCorgi, CardiganWelshCorgi, GoldenRetriever]
       expect(Dog.descendants).to match_array(expected)
+    end
+  end
+end
+
+describe Jekyll::Recker::Mixins::Introspection do
+  describe '.class_name' do
+    it 'should return the class name' do
+      expect(Dog.new.class_name).to eq('Dog')
     end
   end
 end

@@ -16,6 +16,17 @@ module Jekyll
         end
       end
 
+      # Introspection
+      module Introspection
+        def self.included(base)
+          base.extend(self)
+        end
+
+        def class_name
+          self.class.name.split('::').last
+        end
+      end
+
       # Logging
       module Logging
         def self.included(base)
