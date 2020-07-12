@@ -2,6 +2,19 @@
 
 module JekyllRecker
   module Generators
+    # Image Resize Generator
+    class ImageResize < Jekyll::Generator
+      include Mixins::Logging
+
+      def generate(site)
+        @site = site
+        logger.info 'checking images'
+        site.static_files.each do |f|
+          # puts f.relative_path
+        end
+      end
+    end
+
     # Stats Module
     #
     # Functions for stats generators.
