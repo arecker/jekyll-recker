@@ -2,7 +2,7 @@
 
 require_relative 'spec_helper.rb'
 
-class Dummy < JekyllRecker::Social::Share  
+class Dummy < JekyllRecker::Social::Share
 end
 
 describe JekyllRecker::Social::Share do

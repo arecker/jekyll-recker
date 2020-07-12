@@ -94,17 +94,7 @@
 <div class="tags">
   
 
-</div><h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-  
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Shell/ShellCommandFailed.html" title="JekyllRecker::Shell::ShellCommandFailed (class)">ShellCommandFailed</a></span>
-    
-  
-</p>
-
+</div>
 
 
 
@@ -159,34 +149,15 @@
   
 
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Shell/ShellCommandFailed.html" title="JekyllRecker::Shell::ShellCommandFailed (class)">ShellCommandFailed</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
+</h3><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
+8
+9
+10
 11
 12
 13
@@ -199,13 +170,10 @@
 20
 21
 22
-23
-24
-25
-26</pre>
+23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/shell.rb', line 11</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/shell.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_out'>out</span><span class='comma'>,</span> <span class='id identifier rubyid_err'>err</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Open3</span><span class='period'>.</span><span class='id identifier rubyid_capture3'>capture3</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='rparen'>)</span>
@@ -221,7 +189,7 @@
 </span><span class='tstring_content'>    </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_err'>err</span><span class='embexpr_end'>}</span><span class='tstring_content'>
 </span><span class='heredoc_end'>  ERROR
 </span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Shell/ShellCommandFailed.html" title="JekyllRecker::Shell::ShellCommandFailed (class)">ShellCommandFailed</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_msg'>msg</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_msg'>msg</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -233,7 +201,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Jul 10 10:14:44 2020 by
+  Generated on Sat Jul 11 21:59:39 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>

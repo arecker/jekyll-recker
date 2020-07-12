@@ -47,10 +47,10 @@ module JekyllRecker
       def post_body
         url = File.join Configuration.jekyll['url'], latest.url
         <<~BODY
-            #{latest.data['date'].strftime('%A, %B %-d %Y')}
-            #{latest.data['title']}
-            #{url}
-          BODY
+          #{latest.data['date'].strftime('%A, %B %-d %Y')}
+          #{latest.data['title']}
+          #{url}
+        BODY
       end
 
       def latest
@@ -79,7 +79,7 @@ module JekyllRecker
         workspaces.each do |key, data|
           webhook = ENV["SLACK_#{key.upcase}_WEBHOOK"] || extract_from_config(data)
           if webhook.nil?
-            raise ReckerError, "cannot find slack webhook for #{key} workspace!"
+            raise "cannot find slack webhook for #{key} workspace!"
           end
 
           @creds[key] = webhook
@@ -123,7 +123,7 @@ module JekyllRecker
     class Twitter < Share
       def configure!
         creds = extract_from_env || extract_from_config
-        raise ReckerError, 'cannot find twitter credentials!' if creds.nil?
+        raise 'cannot find twitter credentials!' if creds.nil?
 
         @client = ::Twitter::REST::Client.new do |settings|
           settings.consumer_key = creds['consumer_api_key']
@@ -163,11 +163,11 @@ module JekyllRecker
       end
 
       def cred_fieldnames
-        [
-          'access_token_secret',
-          'access_token',
-          'consumer_api_key',
-          'consumer_api_secret'
+        %w[
+          access_token_secret
+          access_token
+          consumer_api_key
+          consumer_api_secret
         ]
       end
     end

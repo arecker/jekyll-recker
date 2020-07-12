@@ -18,7 +18,7 @@ module JekyllRecker
 
       def self.action(args, options)
         JekyllRecker::Social.action(args, options)
-      rescue ::JekyllRecker::Error => e
+      rescue Error => e
         logger.error e.message
         exit 1
       end
