@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'mini_magick'
+require 'fastimage'
+
 module JekyllRecker
   module Generators
     # Image Resize Generator
@@ -9,8 +12,35 @@ module JekyllRecker
       def generate(site)
         @site = site
         logger.info 'checking images'
-        site.static_files.each do |f|
-          # puts f.relative_path
+        resizeable_images.each do |f, d|
+          logger.info "resizing #{f} to fit #{d}"
+          image = MiniMagick::Image.new(f)
+          image.resize d
+        end
+      end
+
+      def image?(file)
+        ['.jpg', 'jpeg', '.png', '.svg'].include? File.extname(file)
+      end
+
+      def too_big?(width, height)
+        width > 800 || height > 800
+      end
+
+      def images
+        @site.static_files.collect(&:path).select { |f| image?(f) }
+      end
+
+      def resizeable_images
+        with_sizes = images.map { |f| [f, FastImage.size(f)].flatten }
+        with_sizes.select! { |f| too_big?(f[1], f[2]) }
+        with_sizes.map do |f, w, h|
+          dimensions = if w > h
+                         '800x600'
+                       else
+                         '600x800'
+                       end
+          [f, dimensions]
         end
       end
     end
