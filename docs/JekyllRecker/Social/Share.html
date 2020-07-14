@@ -89,7 +89,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="../Mixins/Introspection.html" title="JekyllRecker::Mixins::Introspection (module)">Mixins::Introspection</a></span>, <span class='object_link'><a href="../Mixins/Logging.html" title="JekyllRecker::Mixins::Logging (module)">Mixins::Logging</a></span></dd>
+      <dd><span class='object_link'><a href="../Mixins/Logging.html" title="JekyllRecker::Mixins::Logging (module)">Mixins::Logging</a></span></dd>
   </dl>
   
   
@@ -389,17 +389,6 @@
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="../Mixins/Logging.html" title="JekyllRecker::Mixins::Logging (module)">Mixins::Logging</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="../Mixins/Logging.html#logger-instance_method" title="JekyllRecker::Mixins::Logging#logger (method)">#logger</a></span></p>
-
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Mixins/Introspection.html" title="JekyllRecker::Mixins::Introspection (module)">Mixins::Introspection</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Mixins/Introspection.html#class_name-instance_method" title="JekyllRecker::Mixins::Introspection#class_name (method)">#class_name</a></span>, <span class='object_link'><a href="../Mixins/Introspection.html#descendants-instance_method" title="JekyllRecker::Mixins::Introspection#descendants (method)">#descendants</a></span></p>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -429,13 +418,13 @@
       <pre class="lines">
 
 
+30
 31
 32
-33
-34</pre>
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span><span class='comma'>,</span> <span class='label'>dry:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='ivar'>@site</span> <span class='op'>=</span> <span class='id identifier rubyid_site'>site</span>
@@ -468,17 +457,17 @@
       <pre class="lines">
 
 
+21
 22
 23
 24
 25
 26
 27
-28
-29</pre>
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_share'>share</span><span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span><span class='comma'>,</span> <span class='label'>dry:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_backend'>backend</span> <span class='op'>=</span> <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span><span class='comma'>,</span> <span class='label'>dry:</span> <span class='id identifier rubyid_dry'>dry</span><span class='rparen'>)</span>
@@ -514,12 +503,12 @@
       <pre class="lines">
 
 
+39
 40
-41
-42</pre>
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_config'>config</span>
   <span class='ivar'>@site</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>recker</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_config_key'>config_key</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
@@ -548,15 +537,15 @@
       <pre class="lines">
 
 
+43
 44
-45
-46</pre>
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_config_key'>config_key</span>
-  <span class='id identifier rubyid_class_name'>class_name</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='symbol'>:KEY</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -600,12 +589,12 @@
       <pre class="lines">
 
 
+65
 66
-67
-68</pre>
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_configure!'>configure!</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
@@ -652,12 +641,12 @@
       <pre class="lines">
 
 
+35
 36
-37
-38</pre>
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dry?'>dry?</span>
   <span class='ivar'>@dry</span>
@@ -682,12 +671,12 @@
       <pre class="lines">
 
 
+57
 58
-59
-60</pre>
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_latest'>latest</span>
   <span class='ivar'>@latest</span> <span class='op'>||=</span> <span class='ivar'>@site</span><span class='period'>.</span><span class='id identifier rubyid_posts'>posts</span><span class='period'>.</span><span class='id identifier rubyid_docs'>docs</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span>
@@ -712,12 +701,12 @@
       <pre class="lines">
 
 
+61
 62
-63
-64</pre>
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 61</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_latest_title'>latest_title</span>
   <span class='id identifier rubyid_latest'>latest</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>title</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -764,12 +753,12 @@
       <pre class="lines">
 
 
+69
 70
-71
-72</pre>
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post!'>post!</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
@@ -794,17 +783,17 @@
       <pre class="lines">
 
 
+48
 49
 50
 51
 52
 53
 54
-55
-56</pre>
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post_body'>post_body</span>
   <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='ivar'>@site</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>url</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_latest'>latest</span><span class='period'>.</span><span class='id identifier rubyid_url'>url</span>
@@ -824,7 +813,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Jul 13 23:30:16 2020 by
+  Generated on Tue Jul 14 08:36:08 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>

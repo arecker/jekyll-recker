@@ -115,6 +115,22 @@
   
 
 </div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="KEY-constant" class="">KEY =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>twitter</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -198,17 +214,6 @@
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="../Mixins/Logging.html" title="JekyllRecker::Mixins::Logging (module)">Mixins::Logging</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="../Mixins/Logging.html#logger-instance_method" title="JekyllRecker::Mixins::Logging#logger (method)">#logger</a></span></p>
-
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Mixins/Introspection.html" title="JekyllRecker::Mixins::Introspection (module)">Mixins::Introspection</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Mixins/Introspection.html#class_name-instance_method" title="JekyllRecker::Mixins::Introspection#class_name (method)">#class_name</a></span>, <span class='object_link'><a href="../Mixins/Introspection.html#descendants-instance_method" title="JekyllRecker::Mixins::Introspection#descendants (method)">#descendants</a></span></p>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -236,9 +241,6 @@
       <pre class="lines">
 
 
-126
-127
-128
 129
 130
 131
@@ -246,10 +248,13 @@
 133
 134
 135
-136</pre>
+136
+137
+138
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 126</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 129</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_configure!'>configure!</span>
   <span class='id identifier rubyid_creds'>creds</span> <span class='op'>=</span> <span class='id identifier rubyid_extract_from_env'>extract_from_env</span> <span class='op'>||</span> <span class='id identifier rubyid_extract_from_config'>extract_from_config</span>
@@ -282,17 +287,17 @@
       <pre class="lines">
 
 
-138
-139
-140
 141
 142
 143
 144
-145</pre>
+145
+146
+147
+148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 141</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post!'>post!</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_dry?'>dry?</span>
@@ -312,7 +317,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Jul 13 23:30:16 2020 by
+  Generated on Tue Jul 14 08:36:08 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>

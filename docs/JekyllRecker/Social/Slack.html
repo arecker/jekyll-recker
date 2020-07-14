@@ -115,6 +115,22 @@
   
 
 </div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="KEY-constant" class="">KEY =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>slack</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -198,17 +214,6 @@
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="../Mixins/Logging.html" title="JekyllRecker::Mixins::Logging (module)">Mixins::Logging</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="../Mixins/Logging.html#logger-instance_method" title="JekyllRecker::Mixins::Logging#logger (method)">#logger</a></span></p>
-
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Mixins/Introspection.html" title="JekyllRecker::Mixins::Introspection (module)">Mixins::Introspection</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Mixins/Introspection.html#class_name-instance_method" title="JekyllRecker::Mixins::Introspection#class_name (method)">#class_name</a></span>, <span class='object_link'><a href="../Mixins/Introspection.html#descendants-instance_method" title="JekyllRecker::Mixins::Introspection#descendants (method)">#descendants</a></span></p>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -236,7 +241,6 @@
       <pre class="lines">
 
 
-79
 80
 81
 82
@@ -246,10 +250,11 @@
 86
 87
 88
-89</pre>
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_configure!'>configure!</span>
   <span class='ivar'>@creds</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -282,7 +287,6 @@
       <pre class="lines">
 
 
-91
 92
 93
 94
@@ -297,10 +301,11 @@
 103
 104
 105
-106</pre>
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post!'>post!</span>
   <span class='id identifier rubyid_message_body'>message_body</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Slack</span><span class='op'>::</span><span class='const'>Notifier</span><span class='op'>::</span><span class='const'>Util</span><span class='op'>::</span><span class='const'>LinkFormatter</span><span class='period'>.</span><span class='id identifier rubyid_format'>format</span><span class='lparen'>(</span><span class='id identifier rubyid_post_body'>post_body</span><span class='rparen'>)</span>
@@ -328,7 +333,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Jul 13 23:30:16 2020 by
+  Generated on Tue Jul 14 08:36:08 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>

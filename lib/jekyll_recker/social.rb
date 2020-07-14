@@ -16,7 +16,6 @@ module JekyllRecker
     # Backend base class for social sharing backends.
     # @abstract
     class Share
-      include Mixins::Introspection
       include Mixins::Logging
 
       def self.share(site, dry: false)
@@ -42,9 +41,9 @@ module JekyllRecker
       end
 
       def config_key
-        class_name.downcase
+        self.class.const_get(:KEY)
       end
-      alias name config_key
+      alias name :config_key
 
       def post_body
         url = File.join @site.config['url'], latest.url
@@ -76,6 +75,8 @@ module JekyllRecker
     #
     # Slack social sharing backend
     class Slack < Share
+      KEY = 'slack'
+
       def configure!
         @creds = {}
         workspaces.each do |key, data|
@@ -123,6 +124,8 @@ module JekyllRecker
     #
     # Twitter social sharing backend
     class Twitter < Share
+      KEY = 'twitter'
+
       def configure!
         creds = extract_from_env || extract_from_config
         raise 'cannot find twitter credentials!' if creds.nil?
@@ -156,16 +159,12 @@ module JekyllRecker
 
       def extract_from_config
         values = cred_fieldnames.map do |k|
-          Shell.run(twitter_config["#{k}_cmd"]).strip
+          Shell.run(config["#{k}_cmd"]).strip
         end
 
         return nil if values.any? { |v| v.nil? || v.empty? }
 
         Hash[cred_fieldnames.zip(values)]
-      end
-
-      def twitter_config
-        @site.config.fetch('recker', {}).fetch('twitter', {})
       end
 
       def cred_fieldnames
