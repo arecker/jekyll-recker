@@ -17,8 +17,11 @@ module JekyllRecker
       end
 
       def self.action(args, options)
-        JekyllRecker::Social.action(args, options)
-      rescue Error => e
+        site = Jekyll::Site.new(configuration_from_options(options))
+        site.reset
+        site.read
+        Social.action(site, args, options)
+      rescue StandardError => e
         logger.error e.message
         exit 1
       end

@@ -346,13 +346,13 @@
       <pre class="lines">
 
 
-32
-33
-34
-35</pre>
+75
+76
+77
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_average'>average</span><span class='lparen'>(</span><span class='id identifier rubyid_numlist'>numlist</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_calc'>calc</span> <span class='op'>=</span> <span class='id identifier rubyid_numlist'>numlist</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sum'>sum</span><span class='comma'>,</span> <span class='id identifier rubyid_el'>el</span><span class='op'>|</span> <span class='id identifier rubyid_sum'>sum</span> <span class='op'>+</span> <span class='id identifier rubyid_el'>el</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>/</span> <span class='id identifier rubyid_numlist'>numlist</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
@@ -400,12 +400,12 @@
       <pre class="lines">
 
 
-24
-25
-26</pre>
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_crunch'>crunch</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>#crunch not implemented!</span><span class='tstring_end'>&#39;</span></span>
@@ -430,12 +430,12 @@
       <pre class="lines">
 
 
-45
-46
-47</pre>
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_entries'>entries</span>
   <span class='ivar'>@site</span><span class='period'>.</span><span class='id identifier rubyid_posts'>posts</span><span class='period'>.</span><span class='id identifier rubyid_docs'>docs</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:published?</span><span class='rparen'>)</span>
@@ -460,15 +460,15 @@
       <pre class="lines">
 
 
-17
-18
-19
-20
-21
-22</pre>
+60
+61
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate'>generate</span><span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span><span class='rparen'>)</span>
   <span class='ivar'>@site</span> <span class='op'>=</span> <span class='id identifier rubyid_site'>site</span>
@@ -496,12 +496,12 @@
       <pre class="lines">
 
 
-13
-14
-15</pre>
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_key'>key</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='symbol'>:KEY</span><span class='rparen'>)</span>
@@ -575,12 +575,12 @@
       <pre class="lines">
 
 
-41
-42
-43</pre>
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/jekyll_recker/generators.rb', line 84</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_total'>total</span><span class='lparen'>(</span><span class='id identifier rubyid_numlist'>numlist</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_numlist'>numlist</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sum'>sum</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_sum'>sum</span> <span class='op'>+</span> <span class='id identifier rubyid_x'>x</span> <span class='rbrace'>}</span>
@@ -595,7 +595,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Jul 11 22:05:41 2020 by
+  Generated on Mon Jul 13 23:30:16 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>

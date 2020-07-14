@@ -5,11 +5,12 @@ require 'twitter'
 
 module JekyllRecker
   module Social
-    def self.action(args, options)
+    def self.action(site, args, options)
       args += %w[slack twitter] if args.empty?
-      Slack.share(dry: options['dry']) if args.include?('slack')
-      Twitter.share(dry: options['dry']) if args.include?('twitter')
+      Slack.share(site, dry: options['dry']) if args.include?('slack')
+      Twitter.share(site, dry: options['dry']) if args.include?('twitter')
     end
+
     # Backend
     #
     # Backend base class for social sharing backends.
@@ -18,8 +19,8 @@ module JekyllRecker
       include Mixins::Introspection
       include Mixins::Logging
 
-      def self.share(dry: false)
-        backend = new(dry: dry)
+      def self.share(site, dry: false)
+        backend = new(site, dry: dry)
         logger.info "#{backend.name} - building configuration"
         backend.configure!
 
@@ -27,7 +28,8 @@ module JekyllRecker
         backend.post!
       end
 
-      def initialize(dry: false)
+      def initialize(site, dry: false)
+        @site = site
         @dry = dry
       end
 
@@ -36,7 +38,7 @@ module JekyllRecker
       end
 
       def config
-        @config ||= JekyllRecker::Configuration.recker.fetch(config_key)
+        @site.config.fetch('recker', {}).fetch(config_key, {})
       end
 
       def config_key
@@ -45,7 +47,7 @@ module JekyllRecker
       alias name config_key
 
       def post_body
-        url = File.join Configuration.jekyll['url'], latest.url
+        url = File.join @site.config['url'], latest.url
         <<~BODY
           #{latest.data['date'].strftime('%A, %B %-d %Y')}
           #{latest.data['title']}
@@ -54,7 +56,7 @@ module JekyllRecker
       end
 
       def latest
-        @latest ||= Configuration.latest_post
+        @latest ||= @site.posts.docs.last
       end
 
       def latest_title
@@ -154,12 +156,16 @@ module JekyllRecker
 
       def extract_from_config
         values = cred_fieldnames.map do |k|
-          Shell.run(Configuration.twitter["#{k}_cmd"]).strip
+          Shell.run(twitter_config["#{k}_cmd"]).strip
         end
 
         return nil if values.any? { |v| v.nil? || v.empty? }
 
         Hash[cred_fieldnames.zip(values)]
+      end
+
+      def twitter_config
+        @site.config.fetch('recker', {}).fetch('twitter', {})
       end
 
       def cred_fieldnames

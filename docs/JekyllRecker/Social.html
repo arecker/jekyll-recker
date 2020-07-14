@@ -111,7 +111,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#action-class_method" title="action (class method)">.<strong>action</strong>(args, options)  &#x21d2; Object </a>
+      <a href="#action-class_method" title="action (class method)">.<strong>action</strong>(site, args, options)  &#x21d2; Object </a>
     
 
     
@@ -142,7 +142,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="action-class_method">
   
-    .<strong>action</strong>(args, options)  &#x21d2; <tt>Object</tt> 
+    .<strong>action</strong>(site, args, options)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -163,10 +163,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/jekyll_recker/social.rb', line 8</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_action'>action</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_action'>action</span><span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span> <span class='op'>+=</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>slack</span><span class='words_sep'> </span><span class='tstring_content'>twitter</span><span class='tstring_end'>]</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-  <span class='const'><span class='object_link'><a href="Social/Slack.html" title="JekyllRecker::Social::Slack (class)">Slack</a></span></span><span class='period'>.</span><span class='id identifier rubyid_share'><span class='object_link'><a href="Social/Share.html#share-class_method" title="JekyllRecker::Social::Share.share (method)">share</a></span></span><span class='lparen'>(</span><span class='label'>dry:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dry</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>slack</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Social/Twitter.html" title="JekyllRecker::Social::Twitter (class)">Twitter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_share'><span class='object_link'><a href="Social/Share.html#share-class_method" title="JekyllRecker::Social::Share.share (method)">share</a></span></span><span class='lparen'>(</span><span class='label'>dry:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dry</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>twitter</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Social/Slack.html" title="JekyllRecker::Social::Slack (class)">Slack</a></span></span><span class='period'>.</span><span class='id identifier rubyid_share'><span class='object_link'><a href="Social/Share.html#share-class_method" title="JekyllRecker::Social::Share.share (method)">share</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span><span class='comma'>,</span> <span class='label'>dry:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dry</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>slack</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Social/Twitter.html" title="JekyllRecker::Social::Twitter (class)">Twitter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_share'><span class='object_link'><a href="Social/Share.html#share-class_method" title="JekyllRecker::Social::Share.share (method)">share</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span><span class='comma'>,</span> <span class='label'>dry:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dry</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>twitter</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -178,7 +178,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Jul 11 22:05:41 2020 by
+  Generated on Mon Jul 13 23:30:16 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.2).
 </div>
